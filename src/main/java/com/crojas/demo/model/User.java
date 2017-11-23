@@ -1,16 +1,27 @@
 package com.crojas.demo.model;
 
+import javax.validation.constraints.NotNull;
+
+import org.hibernate.validator.constraints.NotBlank;
+import org.hibernate.validator.constraints.NotEmpty;
 
 public class User {
 
+	@NotNull(message = "no puede ser nulo")
+	@NotBlank(message = "no puede is en blanco")
 	private String userId;
 
+	@NotNull(message = "no puede ser nulo")
+	@NotEmpty(message = "no puede ser vacío")
 	private String userName;
 
+	@NotNull(message = "no puede ser nulo")
 	private String gender;
 
+	@NotNull(message = "no puede ser nulo")
 	private Boolean married;
 
+	@NotNull(message = "no puede ser nulo")
 	private String profile;
 
 	public User() {

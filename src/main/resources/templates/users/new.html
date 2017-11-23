@@ -12,22 +12,36 @@
 		
 		<label>ID: </label>
 		<input type="text" th:field="*{userId}" />
+		<label th:if="${#fields.hasErrors('userId')}" th:errors="*{userId}">error.</label>
+		
+		<br />
 		
 		<label>Username: </label>
 		<input type="text" th:field="*{userName}" />
+		<label th:if="${#fields.hasErrors('userName')}" th:errors="*{userName}">error.</label>
+		
+		<br />
 		
 		<label>Gender: </label>
 		<input type="radio" th:field="*{gender}" value="Male"/>
 		<input type="radio" th:field="*{gender}" value="Female"/>
+		<label th:if="${#fields.hasErrors('gender')}" th:errors="*{gender}">error.</label>
+		
+		<br />
 		
 		<label>Married: </label>
 		<input type="checkbox" th:field="*{married}" /> 
+		<label th:if="${#fields.hasErrors('married')}" th:errors="*{married}">error.</label>
+		
+		<br />
 		 
 		 <label>Profile: </label>
 		 <select th:field="*{profile}">
 		 	<option th:each="profile : ${profiles}" th:value="${profile}" th:text="${profile}">Profile</option>
 		 </select>
-		 
+		<label th:if="${#fields.hasErrors('profile')}" th:errors="*{profile}">error.</label> 
+		
+		<br /><br />
 		 <input type="submit" th:value="#{user.form.submit}"/>
 	     <input type="reset" th:value="#{user.form.reset}"/>
 	     

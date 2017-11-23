@@ -61,6 +61,8 @@ public class UserController {
 		
 		ModelAndView mav = new ModelAndView();
 		
+		System.out.println(result.hasErrors());
+		
 		if ( result.hasErrors() ) {
 			
 			System.out.println( "Validation errors!!" );
